@@ -15,33 +15,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/backgroundColor">
 
-    <!-- Splash logo -->
-    <ImageView
-        android:id="@+id/splash_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_margin="@dimen/portrait_splash_padding"
-        android:adjustViewBounds="true"
-        android:alpha=".7"
-        android:contentDescription="@string/image_desc_guardian_logo"
-        android:src="@drawable/guardian_logo_white" />
 
-    <!-- Splash logo text: "Powered by" -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/splash_logo"
-        android:layout_centerHorizontal="true"
-        android:text="@string/powered_by"
-        android:textAppearance="@style/SplashPoweredByText" />
 
     <!-- Empty view is only visible when there is a notice to display. -->
     <TextView
         android:id="@+id/feedback_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/splash_logo"
+
         android:layout_centerHorizontal="true"
         android:layout_marginEnd="@dimen/margin_xl"
         android:layout_marginLeft="@dimen/margin_xl"
