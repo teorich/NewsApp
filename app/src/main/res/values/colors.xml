@@ -11,8 +11,7 @@
     <!-- color used for cardview background when no thumbnail -->
     <!-- App's background color -->
     <color name="backgroundColor">#485a6e</color>
-    <!-- Accent color of the app -->
-    <color name="primaryHilight">#ee0290</color>v
+
     <!-- Accent color of the app -->
     <color name="secondaryHilight">#1da1f2</color>
     <!-- Primary Text Color -->

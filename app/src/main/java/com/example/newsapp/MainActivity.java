@@ -123,8 +123,8 @@ public class MainActivity extends AppCompatActivity
         // Configure the refreshing colors
         // Configure the refreshing colors
         swipeContainer.setColorSchemeResources(
-                R.color.primaryHilight,
-                R.color.secondaryHilight);
+                R.color.badge,
+                R.color.primaryDark);
 
 
 
