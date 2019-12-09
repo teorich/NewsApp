@@ -12,6 +12,7 @@ import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.jsoup.Jsoup;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -156,7 +157,7 @@ public final class NewsQueryUtils {
         String webTitle;
         String webUrl;
         String webTrailText;
-        String byLine;
+        String author;
         String thumbnail;
         // If the JSON string is empty or null, then return early.
         if (TextUtils.isEmpty(articleJSON)) {
@@ -198,7 +199,7 @@ public final class NewsQueryUtils {
                 webTitle = jsonObjectFields.getString("headline");
                 webTrailText = jsonObjectFields.optString("trailText");
                 webUrl = jsonObjectFields.getString("shortUrl");
-                byLine = jsonObjectFields.optString("byline");
+                author = jsonObjectFields.optString("byline");
                 thumbnail = jsonObjectFields.optString("thumbnail");
 
                 // Add a new NewsArticle from the data
@@ -208,7 +209,7 @@ public final class NewsQueryUtils {
                         webTitle,
                         html2text(webTrailText),
                         webUrl,
-                        byLine,
+                        author,
                         downloadBitmap(thumbnail)
                 ));
             }
@@ -219,7 +220,7 @@ public final class NewsQueryUtils {
             // with the message from the exception.
             Log.e(LOG_TAG, "NewsQueryUtils: Problem parsing the article JSON results", e);
             // Notify the user in a toast
-            Toast.makeText(MyApplication.getAppContext(), R.string.no_json_ok_response, Toast.LENGTH_LONG).show();
+            Toast.makeText(NewsApplication.getAppContext(), R.string.no_json_ok_response, Toast.LENGTH_LONG).show();
         }
 
         // Return the list of newsArticles

@@ -1,0 +1,17 @@
+package com.example.newsapp;
+
+import android.app.Application;
+import android.content.Context;
+
+public class NewsApplication extends Application {
+    private static Context context;
+
+    public static Context getAppContext() {
+        return NewsApplication.context;
+    }
+
+    public void onCreate() {
+        super.onCreate();
+        NewsApplication.context = getApplicationContext();
+    }
+}
