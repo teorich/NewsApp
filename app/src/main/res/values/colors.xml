@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Primary color of the app (shown in the app bar) -->
-    <color name="primaryColor">#141d26</color>
+    <color name="primaryColor">#6A306A</color>
     <!-- Primary dark color of the app (shown in the status bar) -->
-    <color name="primaryDark">#141d26</color>
+    <color name="primaryDark">#5D428F</color>
     <!-- Menu Title Background -->
     <color name="menuTitleBackground">#ffffff</color>
     <!-- color used for cardview background -->
-    <color name="backgroundColorOverlay">#141d26</color>
+    <color name="backgroundColorOverlay">#504089</color>
     <!-- color used for cardview background when no thumbnail -->
     <!-- App's background color -->
     <color name="backgroundColor">#485a6e</color>
     <!-- Accent color of the app -->
+    <color name="primaryHilight">#ee0290</color>v
     <!-- Accent color of the app -->
     <color name="secondaryHilight">#1da1f2</color>
     <!-- Primary Text Color -->

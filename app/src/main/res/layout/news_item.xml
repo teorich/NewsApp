@@ -18,6 +18,7 @@
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/playlist_cardview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/margin_s"
@@ -39,6 +40,7 @@
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.Group
+                android:id="@+id/article_image_group"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="visible"
@@ -59,6 +61,7 @@
                 app:srcCompat="@drawable/background_gradient" />
 
             <ImageView
+                android:id="@+id/scrim"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:contentDescription="@null"
@@ -103,6 +106,7 @@
                 android:paddingStart="@dimen/margin_s"
                 android:paddingTop="@dimen/margin_s"
                 android:text="@string/article_trail_text"
+                android:textFontWeight="300"
                 android:textAppearance="@style/ArticleTrailText"
                 app:layout_constraintEnd_toEndOf="@+id/article_image"
                 app:layout_constraintStart_toStartOf="@+id/article_image"
@@ -145,7 +149,7 @@
 
             <TextView
                 android:id="@+id/article_date"
-                android:layout_width="0dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginEnd="@dimen/margin_l"
@@ -176,18 +180,7 @@
                 app:layout_constraintStart_toStartOf="@+id/article_date"
                 app:layout_constraintTop_toBottomOf="@+id/article_date" />
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:contentDescription="@null"
-                android:cropToPadding="false"
-                android:paddingBottom="@dimen/margin_xl"
-                android:scaleType="centerCrop"
-                app:layout_constraintEnd_toEndOf="@+id/article_date"
-                app:layout_constraintStart_toStartOf="@+id/article_date"
-                app:layout_constraintTop_toBottomOf="@+id/article_time"
-                app:srcCompat="@drawable/bookmark" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

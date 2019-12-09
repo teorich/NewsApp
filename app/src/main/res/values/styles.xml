@@ -20,7 +20,7 @@
     <style name="AppTitleText" parent="@style/TextAppearance.AppCompat.Title">
         <item name="android:fontFamily">@font/ubuntu</item>
         <item name="android:textSize">@dimen/text_size_apptitle</item>
-        <item name="android:textColor">@color/secondaryHilight</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
     </style>
 
     <!-- Toolbar SubTitleView Text -->
@@ -86,6 +86,16 @@
     <!-- Settings Dialog Styles -->
 
     <!-- Settings Preferences Text Style -->
+    <style name="SettingsFragmentTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowBackground">@color/backgroundColor</item>
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorAccent">@color/secondaryHilight</item>
+        <item name="android:textColorPrimary">@color/primaryTextColor</item>
+        <item name="android:textColorSecondary">@color/primaryLight</item>
+        <item name="android:fontFamily">@font/ubuntu</item>
+        <item name="android:textSize">@dimen/text_size_m</item>
+    </style>
 
 
 </resources>

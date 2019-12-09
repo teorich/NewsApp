@@ -54,7 +54,7 @@
     <string name="pref_topic_title">Topic</string>
     <string name="pref_topic_key" translatable="false">topic</string>
     <string name="pref_topic_default">@string/pref_topic_0_label_value</string>
-    <string name="pref_topic_0_label">Good News</string>
+    <string name="pref_topic_0_label">News</string>
     <string name="pref_topic_1_label">U.S. News</string>
     <string name="pref_topic_2_label">World News</string>
     <string name="pref_topic_3_label">Sport</string>
