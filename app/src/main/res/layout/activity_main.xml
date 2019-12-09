@@ -17,6 +17,6 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_menu_preferences"
-         />
+        app:backgroundTint="@color/badge" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

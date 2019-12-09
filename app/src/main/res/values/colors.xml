@@ -19,4 +19,5 @@
     <color name="primaryTextColor">@android:color/white</color>
     <!-- Primary Light Text Color -->
     <color name="primaryLight">#8899a6</color>
+    <color name="badge">#EE7F2D</color>
 </resources>
