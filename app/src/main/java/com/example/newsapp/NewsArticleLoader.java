@@ -9,10 +9,11 @@ import java.util.List;
  * Loads a list of articles by using an AsyncTask to perform the
  * network request to the given URL.
  */
+@SuppressWarnings("deprecation")
 public class NewsArticleLoader extends AsyncTaskLoader<List<NewsArticle>> {
 
     /** Query URL */
-    private String mUrl;
+    private static String mUrl;
     public static boolean mPrefThumbnail;
 
     /**
@@ -45,5 +46,9 @@ public class NewsArticleLoader extends AsyncTaskLoader<List<NewsArticle>> {
         // Perform the network request, parse the response, and extract a list of newsArticles.
         List<NewsArticle> newsArticles = NewsQueryUtils.fetchArticleData(mUrl);
         return newsArticles;
+    }
+
+    public static void setmUrl(String url) {
+        mUrl = url;
     }
 }

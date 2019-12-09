@@ -19,6 +19,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -126,21 +127,13 @@ public class MainActivity extends AppCompatActivity
                 R.color.secondaryHilight);
 
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "hello", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
     }
 
 
     @Override
     public Loader<List<NewsArticle>> onCreateLoader(int i, Bundle bundle) {
 
-        String sec = "News";
         // Get User Preferences or Defaults from Settings
         String SECTION_CHOICE = getPreferenceStringValue(R.string.pref_topic_key, R.string.pref_topic_default);
         String ORDER_BY = getPreferenceStringValue(R.string.pref_order_by_key, R.string.pref_order_by_default);
@@ -187,12 +180,13 @@ public class MainActivity extends AppCompatActivity
         }
 
 
-
         // Construct the API URL to query the Guardian Dataset
         String GUARDIAN_SECTION = CreateUrl.constructUrl(SECTION_CHOICE, ORDER_BY);
 
         // Create a new loader for the given URL
         return new NewsArticleLoader(this, GUARDIAN_SECTION, PREF_THUMBNAIL);
+
+
     }
 
     @Override
@@ -306,4 +300,7 @@ public class MainActivity extends AppCompatActivity
                 getResources().getBoolean(defaultValue)
         );
     }
+
+
+
 }
