@@ -48,7 +48,5 @@ public class NewsArticleLoader extends AsyncTaskLoader<List<NewsArticle>> {
         return newsArticles;
     }
 
-    public static void setmUrl(String url) {
-        mUrl = url;
-    }
+
 }

@@ -1,5 +1,6 @@
 package com.example.newsapp;
 
+import android.net.Uri;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
@@ -12,7 +13,7 @@ public class CreateUrl {
     private static final String URL_BASE = "https://content.guardianapis.com/search?";
 
     // Extras at the end of the URL string
-    private static final String URL_EXTRAS = "&show-fields=headline,trailText,shortUrl,thumbnail,byline";
+    private static  final String extras = "&show-fields=headline,trailText,shortUrl,thumbnail,byline";
 
     /**
      * API Key Value which you need to store in your gradle.properties file as:
@@ -27,37 +28,29 @@ public class CreateUrl {
      * @return URL string
      */
     public static String constructUrl(@Nullable String section, @Nullable String orderBy) {
+        String myUrl = "";
 
-        // Start the StringBuilder and add the URL Base to the beginning
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(URL_BASE);
+            if(section !=null && orderBy != null) {
+                Uri.Builder builder = new Uri.Builder();
+                builder.scheme("https")
+                        .authority("content.guardianapis.com")
+                        .appendPath("search")
+                        .encodedQuery(section)
+                        .appendQueryParameter("order-by", orderBy)
+                        .encodedQuery(extras)
+                        .appendQueryParameter("api-key", apiKey);
+                 myUrl = builder.toString();
 
-        // If the section isn't null then add that
-        if (section != null) {
-            stringBuilder.append(section);
-        } else {
-            stringBuilder.append(NewsApplication.getAppContext().getResources().getString(R.string.pref_topic_0_label_value));
-        }
+            } else {
+                myUrl = "https://content.guardianapis.com/search?&show-fields=headline,trailText,shortUrl,thumbnail,byline&api-key="+apiKey;
 
-        // If the orderBy isn't null then add that
-        if (orderBy != null) {
-            stringBuilder.append("&order-by="
-                    + orderBy);
-        } else {
-            // order by newest articles by default if no preference set
-            stringBuilder.append("&order-by="
-                    + NewsApplication.getAppContext().getResources().getString(R.string.pref_order_by_default));
-        }
+            }
 
-        // Add the extras to the query
-        stringBuilder.append(URL_EXTRAS);
 
-        // Add the API Key to the end of the query
-        stringBuilder.append(URL_API_KEY);
 
         // LOG the API URL
-        Log.i(LOG_TAG, "API GUARDIAN_REQUEST_URL: " + stringBuilder.toString());
+        Log.i(LOG_TAG, "API GUARDIAN_REQUEST_URL BY URi Builder: " + myUrl);
 
-        return stringBuilder.toString();
+        return myUrl;
     }
 }

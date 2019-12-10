@@ -232,10 +232,6 @@ public class MainActivity extends AppCompatActivity
     // This method is called whenever an button in the Toolbar is selected.
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_refresh:
-                swipeContainer.setRefreshing(true);
-                loadData();
-                return true;
             case R.id.action_settings:
                 Intent settingsIntent = new Intent(this, SettingsActivity.class);
                 startActivity(settingsIntent);
